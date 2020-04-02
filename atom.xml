@@ -5,9 +5,9 @@
   <subtitle>KingstonXZJ</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://kingstonxzj.github.io/"/>
+  <link href="https://qihuang7.top/"/>
   <updated>2020-04-02T13:02:02.362Z</updated>
-  <id>https://kingstonxzj.github.io/</id>
+  <id>https://qihuang7.top/</id>
   
   <author>
     <name>七皇</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>每日一题：和为s的连续正数序列</title>
-    <link href="https://kingstonxzj.github.io/2020/04/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/"/>
-    <id>https://kingstonxzj.github.io/2020/04/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/</id>
+    <link href="https://qihuang7.top/2020/04/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/"/>
+    <id>https://qihuang7.top/2020/04/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/</id>
     <published>2020-04-02T12:52:29.000Z</published>
     <updated>2020-04-02T13:02:02.362Z</updated>
     
@@ -35,19 +35,19 @@
     </summary>
     
     
-      <category term="leetcode" scheme="https://kingstonxzj.github.io/categories/leetcode/"/>
+      <category term="leetcode" scheme="https://qihuang7.top/categories/leetcode/"/>
     
     
-      <category term="leetcode" scheme="https://kingstonxzj.github.io/tags/leetcode/"/>
+      <category term="leetcode" scheme="https://qihuang7.top/tags/leetcode/"/>
     
-      <category term="数组" scheme="https://kingstonxzj.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+      <category term="数组" scheme="https://qihuang7.top/tags/%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>设计模式之单例模式</title>
-    <link href="https://kingstonxzj.github.io/2020/04/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://kingstonxzj.github.io/2020/04/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</id>
+    <link href="https://qihuang7.top/2020/04/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://qihuang7.top/2020/04/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</id>
     <published>2020-04-02T12:07:41.000Z</published>
     <updated>2020-04-02T12:12:38.221Z</updated>
     
@@ -63,23 +63,23 @@
     </summary>
     
     
-      <category term="java基础" scheme="https://kingstonxzj.github.io/categories/java%E5%9F%BA%E7%A1%80/"/>
+      <category term="java基础" scheme="https://qihuang7.top/categories/java%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="java" scheme="https://kingstonxzj.github.io/tags/java/"/>
+      <category term="java" scheme="https://qihuang7.top/tags/java/"/>
     
-      <category term="基础" scheme="https://kingstonxzj.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="基础" scheme="https://qihuang7.top/tags/%E5%9F%BA%E7%A1%80/"/>
     
-      <category term="多线程" scheme="https://kingstonxzj.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <category term="多线程" scheme="https://qihuang7.top/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
-      <category term="设计模式" scheme="https://kingstonxzj.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://qihuang7.top/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>每日一题：最小的k个数</title>
-    <link href="https://kingstonxzj.github.io/2020/04/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0/"/>
-    <id>https://kingstonxzj.github.io/2020/04/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0/</id>
+    <link href="https://qihuang7.top/2020/04/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0/"/>
+    <id>https://qihuang7.top/2020/04/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0/</id>
     <published>2020-04-02T11:03:17.000Z</published>
     <updated>2020-04-02T11:06:57.956Z</updated>
     
@@ -95,19 +95,19 @@
     </summary>
     
     
-      <category term="leetcode" scheme="https://kingstonxzj.github.io/categories/leetcode/"/>
+      <category term="leetcode" scheme="https://qihuang7.top/categories/leetcode/"/>
     
     
-      <category term="leetcode" scheme="https://kingstonxzj.github.io/tags/leetcode/"/>
+      <category term="leetcode" scheme="https://qihuang7.top/tags/leetcode/"/>
     
-      <category term="排序" scheme="https://kingstonxzj.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
+      <category term="排序" scheme="https://qihuang7.top/tags/%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
   <entry>
     <title>java多线程基础（一）：进程与线程的基本概念</title>
-    <link href="https://kingstonxzj.github.io/2020/04/02/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
-    <id>https://kingstonxzj.github.io/2020/04/02/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</id>
+    <link href="https://qihuang7.top/2020/04/02/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
+    <id>https://qihuang7.top/2020/04/02/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</id>
     <published>2020-04-02T06:20:26.000Z</published>
     <updated>2020-04-02T06:25:03.222Z</updated>
     
@@ -123,23 +123,23 @@
     </summary>
     
     
-      <category term="java基础" scheme="https://kingstonxzj.github.io/categories/java%E5%9F%BA%E7%A1%80/"/>
+      <category term="java基础" scheme="https://qihuang7.top/categories/java%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="java" scheme="https://kingstonxzj.github.io/tags/java/"/>
+      <category term="java" scheme="https://qihuang7.top/tags/java/"/>
     
-      <category term="基础" scheme="https://kingstonxzj.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="基础" scheme="https://qihuang7.top/tags/%E5%9F%BA%E7%A1%80/"/>
     
-      <category term="多线程" scheme="https://kingstonxzj.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <category term="多线程" scheme="https://qihuang7.top/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
-      <category term="并发" scheme="https://kingstonxzj.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="并发" scheme="https://qihuang7.top/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>算法基础--排序：选择排序与插入排序</title>
-    <link href="https://kingstonxzj.github.io/2020/04/02/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80--%E6%8E%92%E5%BA%8F%EF%BC%9A%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%88%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E4%B8%8E%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%EF%BC%89/"/>
-    <id>https://kingstonxzj.github.io/2020/04/02/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80--%E6%8E%92%E5%BA%8F%EF%BC%9A%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%88%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E4%B8%8E%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%EF%BC%89/</id>
+    <link href="https://qihuang7.top/2020/04/02/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80--%E6%8E%92%E5%BA%8F%EF%BC%9A%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%88%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E4%B8%8E%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%EF%BC%89/"/>
+    <id>https://qihuang7.top/2020/04/02/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80--%E6%8E%92%E5%BA%8F%EF%BC%9A%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%88%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E4%B8%8E%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%EF%BC%89/</id>
     <published>2020-04-01T17:06:31.000Z</published>
     <updated>2020-04-02T06:28:08.676Z</updated>
     
@@ -155,23 +155,23 @@
     </summary>
     
     
-      <category term="算法" scheme="https://kingstonxzj.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://qihuang7.top/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="基础" scheme="https://kingstonxzj.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="基础" scheme="https://qihuang7.top/tags/%E5%9F%BA%E7%A1%80/"/>
     
-      <category term="排序" scheme="https://kingstonxzj.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
+      <category term="排序" scheme="https://qihuang7.top/tags/%E6%8E%92%E5%BA%8F/"/>
     
-      <category term="算法" scheme="https://kingstonxzj.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://qihuang7.top/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="数据结构" scheme="https://kingstonxzj.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://qihuang7.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>每日一题：两数之和</title>
-    <link href="https://kingstonxzj.github.io/2020/04/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
-    <id>https://kingstonxzj.github.io/2020/04/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</id>
+    <link href="https://qihuang7.top/2020/04/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
+    <id>https://qihuang7.top/2020/04/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</id>
     <published>2020-04-01T15:18:56.000Z</published>
     <updated>2020-04-01T15:29:48.650Z</updated>
     
@@ -188,19 +188,19 @@
     </summary>
     
     
-      <category term="leetcode" scheme="https://kingstonxzj.github.io/categories/leetcode/"/>
+      <category term="leetcode" scheme="https://qihuang7.top/categories/leetcode/"/>
     
     
-      <category term="leetcode" scheme="https://kingstonxzj.github.io/tags/leetcode/"/>
+      <category term="leetcode" scheme="https://qihuang7.top/tags/leetcode/"/>
     
-      <category term="数组" scheme="https://kingstonxzj.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+      <category term="数组" scheme="https://qihuang7.top/tags/%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>每日一题：用两个栈实现队列</title>
-    <link href="https://kingstonxzj.github.io/2020/04/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/"/>
-    <id>https://kingstonxzj.github.io/2020/04/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</id>
+    <link href="https://qihuang7.top/2020/04/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/"/>
+    <id>https://qihuang7.top/2020/04/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</id>
     <published>2020-04-01T11:34:52.000Z</published>
     <updated>2020-04-01T17:15:35.369Z</updated>
     
@@ -216,19 +216,19 @@
     </summary>
     
     
-      <category term="leetcode" scheme="https://kingstonxzj.github.io/categories/leetcode/"/>
+      <category term="leetcode" scheme="https://qihuang7.top/categories/leetcode/"/>
     
     
-      <category term="leetcode" scheme="https://kingstonxzj.github.io/tags/leetcode/"/>
+      <category term="leetcode" scheme="https://qihuang7.top/tags/leetcode/"/>
     
-      <category term="栈" scheme="https://kingstonxzj.github.io/tags/%E6%A0%88/"/>
+      <category term="栈" scheme="https://qihuang7.top/tags/%E6%A0%88/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://kingstonxzj.github.io/2020/04/01/hello-world/"/>
-    <id>https://kingstonxzj.github.io/2020/04/01/hello-world/</id>
+    <link href="https://qihuang7.top/2020/04/01/hello-world/"/>
+    <id>https://qihuang7.top/2020/04/01/hello-world/</id>
     <published>2020-03-31T16:43:35.596Z</published>
     <updated>2020-03-31T16:43:35.602Z</updated>
     
