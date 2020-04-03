@@ -84,14 +84,14 @@ function activateLightMode(){
 <li>你可以假设所有操作都是有效的（例如, 对一个空的栈不会调用 pop 或者 top 操作）。</li>
 </ul>
 <h2 id="官方题解：（两个队列，-压入-O-n-O-n-O-n-，-弹出-O-1-O-1-O-1-）"><a href="#官方题解：（两个队列，-压入-O-n-O-n-O-n-，-弹出-O-1-O-1-O-1-）" class="headerlink" title="官方题解：（两个队列， 压入 - O(n)O(n)O(n)， 弹出 - O(1)O(1)O(1)）"></a>官方题解：（两个队列， 压入 - O(n)O(n)O(n)， 弹出 - O(1)O(1)O(1)）</h2><h3 id="压入（push）"><a href="#压入（push）" class="headerlink" title="压入（push）"></a>压入（push）</h3><p>接下来介绍的算法让每一个新元素从 q2 入队，同时把这个元素作为栈顶元素保存。当 q1 非空（也就是栈非空），我们让 q1 中所有的元素全部出队，再将出队的元素从 q2 入队。通过这样的方式，新元素（栈中的栈顶元素）将会在 q2 的前端。我们通过将 q1， q2 互相交换的方式来避免把 q2 中的元素往 q1 中拷贝。</p>
-<p><a href="https://pic.leetcode-cn.com/1acd10c255534e86719cf83b07f294c76967687c52db3ec44367d0cb7c45483e-file_1561370741978" target="_blank" rel="noopener" data-fancybox="group" data-caption="push压入" class="fancybox"><img alt="push压入" title="push压入" data-src="https://pic.leetcode-cn.com/1acd10c255534e86719cf83b07f294c76967687c52db3ec44367d0cb7c45483e-file_1561370741978" class="lazyload"></a></p>
+<p><a href="https://pic.leetcode-cn.com/1acd10c255534e86719cf83b07f294c76967687c52db3ec44367d0cb7c45483e-file_1561370741978" target="_blank" rel="noopener" data-fancybox="group" data-caption="push压入" class="fancybox"><img alt="push压入" data-src="https://pic.leetcode-cn.com/1acd10c255534e86719cf83b07f294c76967687c52db3ec44367d0cb7c45483e-file_1561370741978" class="lazyload" title="push压入"></a></p>
 <p><strong>复杂度分析</strong></p>
 <ul>
 <li>*<em>时间复杂度：O(n)O(n)O(n)  *</em><br>算法会让 q1 出队 nnn 个元素，同时入队 n+1n + 1n+1 个元素到 q2。这个过程会产生 2n+12n + 12n+1 步操作，同时链表中 插入 操作和 移除 操作的时间复杂度为 O(1)O(1)O(1)，因此时间复杂度为 O(n)O(n)O(n)。</li>
 <li><strong>空间复杂度：O(1)O(1)O(1)</strong></li>
 </ul>
 <h3 id="弹出（pop）"><a href="#弹出（pop）" class="headerlink" title="弹出（pop）"></a>弹出（pop）</h3><p>直接让 q1 中元素出队，同时将出队后的 q1 中的队首元素作为栈顶元素保存。</p>
-<p><a href="https://pic.leetcode-cn.com/fc27d76b78bbe094f6912a0aa56dee5f8e618a4f04834ab043eb39ecb2e0cc93-file_1561370741978" target="_blank" rel="noopener" data-fancybox="group" data-caption="pop弹出" class="fancybox"><img alt="pop弹出" title="pop弹出" data-src="https://pic.leetcode-cn.com/fc27d76b78bbe094f6912a0aa56dee5f8e618a4f04834ab043eb39ecb2e0cc93-file_1561370741978" class="lazyload"></a></p>
+<p><a href="https://pic.leetcode-cn.com/fc27d76b78bbe094f6912a0aa56dee5f8e618a4f04834ab043eb39ecb2e0cc93-file_1561370741978" target="_blank" rel="noopener" data-fancybox="group" data-caption="pop弹出" class="fancybox"><img alt="pop弹出" data-src="https://pic.leetcode-cn.com/fc27d76b78bbe094f6912a0aa56dee5f8e618a4f04834ab043eb39ecb2e0cc93-file_1561370741978" class="lazyload" title="pop弹出"></a></p>
 <p><strong>复杂度分析</strong></p>
 <ul>
 <li>时间复杂度：O(1)</li>
