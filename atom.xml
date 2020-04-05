@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qihuang7.top/"/>
-  <updated>2020-04-05T12:54:38.791Z</updated>
+  <updated>2020-04-05T16:44:06.528Z</updated>
   <id>https://qihuang7.top/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每日一题：合并排序的数组</title>
+    <link href="https://qihuang7.top/2020/04/06/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%90%88%E5%B9%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E6%95%B0%E7%BB%84/"/>
+    <id>https://qihuang7.top/2020/04/06/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A%E5%90%88%E5%B9%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E6%95%B0%E7%BB%84/</id>
+    <published>2020-04-05T16:43:29.000Z</published>
+    <updated>2020-04-05T16:44:06.528Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><h1 id="面试题10-01-合并排序的数组"><a href="#面试题10-01-合并排序的数组" class="headerlink" title="面试题10.01 合并排序的数组"></a>面试题10.01 合并排序的数组</h1><p>给定两个排序后的数组 A 和 B，其中 A 的末端有足够的缓冲空间容纳 B。 编写一个方法，将 B 合并入 A 并排序。</p><p>初始化 A 和 B 的元素数量分别为 m 和 n。</p><p><strong>示例:</strong></p><blockquote><p>输入:<br>A = [1,2,3,0,0,0], m = 3<br>B = [2,5,6],       n = 3<br>输出: [1,2,2,3,5,6]</p></blockquote><p>说明:</p><blockquote><p>A.length == n + m</p></blockquote><p><strong>暴力解法：</strong></p><div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">java</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] A, <span class="keyword">int</span> m, <span class="keyword">int</span>[] B, <span class="keyword">int</span> n)</span> </span>{</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = m;i<m+n;i++){< span><br><span class="line">            A[i] = B[j++];</span><br><span class="line">        }</span><br><span class="line">        Arrays.sort(A);</span><br><span class="line">    }</span><br><span class="line">}</span><br></m+n;i++){<></span></pre></td></tr></tbody></table></figure></div></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h1 id=&quot;面试题10-01-合并排序的数组&quot;&gt;&lt;a href=&quot;#面试题10-01-合并排序的数组&quot; class=&quot;headerlink&quot; title=&quot;面试题10.01 合并排序的数组&quot;&gt;&lt;/a&gt;面试题10.01 合并排序
+      
+    
+    </summary>
+    
+    
+      <category term="leetcode" scheme="https://qihuang7.top/categories/leetcode/"/>
+    
+    
+      <category term="leetcode" scheme="https://qihuang7.top/tags/leetcode/"/>
+    
+      <category term="数组" scheme="https://qihuang7.top/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="排序" scheme="https://qihuang7.top/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>java多线程基础（五）：线程间的通信</title>
