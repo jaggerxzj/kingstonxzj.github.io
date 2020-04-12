@@ -1,20 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>七皇</title>
-  <icon>https://www.gravatar.com/avatar/f1ffc9e0a95c344bc9636e7512958903</icon>
-  <subtitle>KingstonXZJ</subtitle>
+  <icon>https://www.gravatar.com/avatar/251e30a005fcf60528a5524a099f5065</icon>
+  <subtitle>qihuang</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qihuang7.top/"/>
-  <updated>2020-04-10T07:38:58.496Z</updated>
+  <updated>2020-04-10T13:31:00.425Z</updated>
   <id>https://qihuang7.top/</id>
   
   <author>
     <name>七皇</name>
-    <email>kingstonxzj@qq.com</email>
+    <email>qihuang7@qq.com</email>
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java多线程基础（十）：AQS抽象队列同步器</title>
+    <link href="https://qihuang7.top/2020/04/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%EF%BC%88%E5%8D%81%EF%BC%89%EF%BC%9AAQS%E6%8A%BD%E8%B1%A1%E9%98%9F%E5%88%97%E5%90%8C%E6%AD%A5%E5%99%A8/"/>
+    <id>https://qihuang7.top/2020/04/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%EF%BC%88%E5%8D%81%EF%BC%89%EF%BC%9AAQS%E6%8A%BD%E8%B1%A1%E9%98%9F%E5%88%97%E5%90%8C%E6%AD%A5%E5%99%A8/</id>
+    <published>2020-04-10T13:18:26.000Z</published>
+    <updated>2020-04-10T13:31:00.425Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><h1 id="AQS简介"><a href="#AQS简介" class="headerlink" title="AQS简介"></a>AQS简介</h1><p>AQS是 AbstractQueuedSynchronizer 的简称，即 <strong>抽象队列同步器</strong>，</p><h2 id="AQS的作用"><a href="#AQS的作用" class="headerlink" title="AQS的作用"></a>AQS的作用</h2><p>AQS是一个用来构建锁和同步器的框架，使用AQS能简单且高效地构造出应用广泛地同步器，比如我们提到地ReentrantLock（可重入锁），Semaphore（信号量），ReentrantReadWriteLock（可重入读写锁），SynchronousQueue（同步队列/阻塞队列），FutureTask等等皆是基于AQS的。</p><p>只要实现它的几个 protected方法就可以利用AQS非常容易地构造出符合我们自己需求的同步器。</p><h1 id="AQS的数据结构"><a href="#AQS的数据结构" class="headerlink" title="AQS的数据结构"></a>AQS的数据结构</h1><p>AQS内部使用了一个 volatile 的变量state来作为资源的标识。同时定义了几个获取和改变state的protected方法，子类可以覆盖这些方法来实现自己的逻辑：<br>getState()、setState()、compareAndSetState()</p><p><strong>这三种均是原子操作</strong>，其中，compareAndSetState 的实现依赖于 Unsafe 的 compareAndSwapInt()方法。</p><p>AQS类本身实现的是一些 <strong>排队和阻塞</strong>的机制，比如具体线程等待队列的维护（如获取资源失败入队/唤醒队列等）。它内部使用了一个先进先出（FIFO）的 <strong>双端队列</strong>，并使用了两个指针head和tail用于标识队列的头部和尾部。</p><p>数据结构如图：</p><p><a href="http://concurrent.redspider.group/article/02/imgs/AQS%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png" data-fancybox="group" data-caption="AQS的数据结构图" class="fancybox"><img alt="AQS的数据结构图" title="AQS的数据结构图" data-src="http://concurrent.redspider.group/article/02/imgs/AQS%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png" class="lazyload"></a></p><p>但它并不是直接储存线程，⽽是储存拥有线程的Node节点。</p><h1 id="资源共享模式"><a href="#资源共享模式" class="headerlink" title="资源共享模式"></a>资源共享模式</h1><p>资源有两种共享模式，或者说两种同步方式：</p><ul><li>独占模式（Exclusive）：资源是独占的，一次只能一个线程获取。如ReentrantLock</li><li>共享模式（Share）：同时可以被多个线程获取，具体的资源个数可以通过参数指定。如Semaphore/CountDownLatch。</li></ul><blockquote><p>一般情况下，子类只需要根据需求实现其中一种模式，当然也有同时实现两种模式的同步类，如ReadWriteLock。</p></blockquote><h1 id="AQS的主要方法"><a href="#AQS的主要方法" class="headerlink" title="AQS的主要方法"></a>AQS的主要方法</h1><p>AQS的设计是 <strong>基于模板方法模式</strong> 的，它有一些方法必须要子类去实现的：</p><ul><li><p>isHeldExclusively()：该线程是否正在独占资源。只有用到condition才需要去实现它。</p></li><li><p>tryAcquire(int)：独占方式。尝试获取资源，成功则返回true，失败则返回false。</p></li><li><p>tryRelease(int)：独占方式。尝试释放资源，成功则返回true，失败则返回false。</p></li><li><p>tryAcquireShared(int)：共享方式。尝试获取资源。负数表示失败；0表示成功，但没有剩余可用资源；正数表示成功，且有剩余资源。</p></li><li><p>tryReleaseShared(int)：共享方式。尝试释放资源，如果释放后允许唤醒后续等待结点返回true，否则返回false。</p></li></ul><p>这些方法都是protected方法，但是它们并没有在AQS具体实现，而是直接抛出异常</p><p><strong>为什么不使用抽象方法实现？</strong></p><blockquote><p>之所以没有定义成 abstract，是因为独占模式下只用实现 tryAcquire-tryRelease ，而共享模式下只用实现 tryAcquireShared-tryReleaseShared。如果都定义成abstract，那么每个模式也要去实现另一模式下的接口。不同的自定义同步器争用共享资源的方式也不同。</p></blockquote><h2 id="获取资源"><a href="#获取资源" class="headerlink" title="获取资源"></a>获取资源</h2><p><a href="http://concurrent.redspider.group/article/02/imgs/acquire%E6%B5%81%E7%A8%8B.jpg" data-fancybox="group" data-caption="获取资源的流程图" class="fancybox"><img alt="获取资源的流程图" title="获取资源的流程图" data-src="http://concurrent.redspider.group/article/02/imgs/acquire%E6%B5%81%E7%A8%8B.jpg" class="lazyload"></a></p><p>获取资源的入口是 acquire(int arg)方法。arg是要获取的资源个数，独占模式下始终为1。</p><p>首先调用 tryAcquire(arg) 尝试去获取资源，如果失败，就通过 addWaiter(Node.EXCLUSIVE) 方法把这个线程 <strong>插入到等待队列中</strong>，其中传入的参数代表要插入的Node是独占式的。</p><p><strong>在结点进入等待队列后，调用park使它进入阻塞状态的，只要头结点的线程是处于活跃状态的。</strong></p><p>获取资源的方法除了acquire之外还有以下三个：</p><ul><li>acquireInterruptibly：申请可中断的资源（独占模式）</li><li>acquireShared：申请共享模式的资源</li><li>acquireSharedInterruptibly：申请可中断的资源（共享模式）</li></ul><blockquote><p>可中断的意思是，在线程中断时可能会抛出InterruptedException</p></blockquote><h1 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h1><h2 id="独占模式（以ReentrantLock为例）"><a href="#独占模式（以ReentrantLock为例）" class="headerlink" title="独占模式（以ReentrantLock为例）"></a>独占模式（以ReentrantLock为例）</h2><p>以 ReentrantLock 为例，state 初始化为 0，表示未锁定状态。</p><p>A 线程 lock()时，会调用 tryAcquire()独占该锁并将 state+1。此后，其他线程再 tryAcquire()时就会失败，直到 A 线程 unlock()到 state=0（即释放锁）为止，其它线程才有机会获取该锁。</p><p>当然，释放锁之前，A 线程自己是可以重复获取此锁的（state 会累加），这就是可重入的概念。</p><p>但要注意，获取多少次就要释放多么次，这样才能保证 state 是能回到零态的</p><h2 id="共享模式（以CountDownLatch为例）"><a href="#共享模式（以CountDownLatch为例）" class="headerlink" title="共享模式（以CountDownLatch为例）"></a>共享模式（以CountDownLatch为例）</h2><p>以 CountDownLatch 以例，任务分为 N 个子线程去执行，state 也初始化为 N（注意 N 要与<br>线程个数一致）。</p><p>这 N 个子线程是并行执行的，每个子线程执行完后 countDown()一次，state<br>会 CAS 减 1。</p><p>等到所有子线程都执行完后(即 state=0)，会 unpark()主调用线程，然后主调用线程就会从 await()函数返回，继续后序动作。</p><h2 id="同时实现两种（ReentrantReadWriteLock）"><a href="#同时实现两种（ReentrantReadWriteLock）" class="headerlink" title="同时实现两种（ReentrantReadWriteLock）"></a>同时实现两种（ReentrantReadWriteLock）</h2></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h1 id=&quot;AQS简介&quot;&gt;&lt;a href=&quot;#AQS简介&quot; class=&quot;headerlink&quot; title=&quot;AQS简介&quot;&gt;&lt;/a&gt;AQS简介&lt;/h1&gt;&lt;p&gt;AQS是 AbstractQueuedSynchronizer 的
+      
+    
+    </summary>
+    
+    
+      <category term="java基础" scheme="https://qihuang7.top/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="多线程" scheme="https://qihuang7.top/categories/java%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+    
+      <category term="java" scheme="https://qihuang7.top/tags/java/"/>
+    
+      <category term="基础" scheme="https://qihuang7.top/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="AQS" scheme="https://qihuang7.top/tags/AQS/"/>
+    
+  </entry>
   
   <entry>
     <title>算法基础--排序：快速排序 *</title>
@@ -81,38 +113,6 @@
       <category term="算法" scheme="https://qihuang7.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数据结构" scheme="https://qihuang7.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java多线程基础（十）：AQS抽象队列同步器</title>
-    <link href="https://qihuang7.top/2020/04/09/%E5%A4%9A%E7%BA%BF%E7%A8%8B/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%EF%BC%88%E5%8D%81%EF%BC%89%EF%BC%9AAQS%E6%8A%BD%E8%B1%A1%E9%98%9F%E5%88%97%E5%90%8C%E6%AD%A5%E5%99%A8/"/>
-    <id>https://qihuang7.top/2020/04/09/%E5%A4%9A%E7%BA%BF%E7%A8%8B/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%EF%BC%88%E5%8D%81%EF%BC%89%EF%BC%9AAQS%E6%8A%BD%E8%B1%A1%E9%98%9F%E5%88%97%E5%90%8C%E6%AD%A5%E5%99%A8/</id>
-    <published>2020-04-09T14:18:26.000Z</published>
-    <updated>2020-04-10T09:10:20.014Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><h1 id="AQS简介"><a href="#AQS简介" class="headerlink" title="AQS简介"></a>AQS简介</h1><p>AQS是 AbstractQueuedSynchronizer 的简称，即 <strong>抽象队列同步器</strong>，</p><h2 id="AQS的作用"><a href="#AQS的作用" class="headerlink" title="AQS的作用"></a>AQS的作用</h2><p>AQS是一个用来构建锁和同步器的框架，使用AQS能简单且高效地构造出应用广泛地同步器，比如我们提到地ReentrantLock（可重入锁），Semaphore（信号量），ReentrantReadWriteLock（可重入读写锁），SynchronousQueue（同步队列/阻塞队列），FutureTask等等皆是基于AQS的。</p><p>只要实现它的几个 protected方法就可以利用AQS非常容易地构造出符合我们自己需求的同步器。</p><h1 id="AQS的数据结构"><a href="#AQS的数据结构" class="headerlink" title="AQS的数据结构"></a>AQS的数据结构</h1><p>AQS内部使用了一个 volatile 的变量state来作为资源的标识。同时定义了几个获取和改变state的protected方法，子类可以覆盖这些方法来实现自己的逻辑：<br>getState()、setState()、compareAndSetState()</p><p><strong>这三种均是原子操作</strong>，其中，compareAndSetState 的实现依赖于 Unsafe 的 compareAndSwapInt()方法。</p><p>AQS类本身实现的是一些 <strong>排队和阻塞</strong>的机制，比如具体线程等待队列的维护（如获取资源失败入队/唤醒队列等）。它内部使用了一个先进先出（FIFO）的 <strong>双端队列</strong>，并使用了两个指针head和tail用于标识队列的头部和尾部。</p><p>数据结构如图：</p><p><a href="http://concurrent.redspider.group/article/02/imgs/AQS%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png" data-fancybox="group" data-caption="AQS的数据结构图" class="fancybox"><img alt="AQS的数据结构图" title="AQS的数据结构图" data-src="http://concurrent.redspider.group/article/02/imgs/AQS%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png" class="lazyload"></a></p><p>但它并不是直接储存线程，⽽是储存拥有线程的Node节点。</p><h1 id="资源共享模式"><a href="#资源共享模式" class="headerlink" title="资源共享模式"></a>资源共享模式</h1><p>资源有两种共享模式，或者说两种同步方式：</p><ul><li>独占模式（Exclusive）：资源是独占的，一次只能一个线程获取。如ReentrantLock</li><li>共享模式（Share）：同时可以被多个线程获取，具体的资源个数可以通过参数指定。如Semaphore/CountDownLatch。</li></ul><blockquote><p>一般情况下，子类只需要根据需求实现其中一种模式，当然也有同时实现两种模式的同步类，如ReadWriteLock。</p></blockquote><h1 id="AQS的主要方法"><a href="#AQS的主要方法" class="headerlink" title="AQS的主要方法"></a>AQS的主要方法</h1><p>AQS的设计是 <strong>基于模板方法模式</strong> 的，它有一些方法必须要子类去实现的：</p><ul><li><p>isHeldExclusively()：该线程是否正在独占资源。只有用到condition才需要去实现它。</p></li><li><p>tryAcquire(int)：独占方式。尝试获取资源，成功则返回true，失败则返回false。</p></li><li><p>tryRelease(int)：独占方式。尝试释放资源，成功则返回true，失败则返回false。</p></li><li><p>tryAcquireShared(int)：共享方式。尝试获取资源。负数表示失败；0表示成功，但没有剩余可用资源；正数表示成功，且有剩余资源。</p></li><li><p>tryReleaseShared(int)：共享方式。尝试释放资源，如果释放后允许唤醒后续等待结点返回true，否则返回false。</p></li></ul><p>这些方法都是protected方法，但是它们并没有在AQS具体实现，而是直接抛出异常</p><p><strong>为什么不使用抽象方法实现？</strong></p><blockquote><p>之所以没有定义成 abstract，是因为独占模式下只用实现 tryAcquire-tryRelease ，而共享模式下只用实现 tryAcquireShared-tryReleaseShared。如果都定义成abstract，那么每个模式也要去实现另一模式下的接口。不同的自定义同步器争用共享资源的方式也不同。</p></blockquote><h2 id="获取资源"><a href="#获取资源" class="headerlink" title="获取资源"></a>获取资源</h2><p><a href="http://concurrent.redspider.group/article/02/imgs/acquire%E6%B5%81%E7%A8%8B.jpg" data-fancybox="group" data-caption="获取资源的流程图" class="fancybox"><img alt="获取资源的流程图" title="获取资源的流程图" data-src="http://concurrent.redspider.group/article/02/imgs/acquire%E6%B5%81%E7%A8%8B.jpg" class="lazyload"></a></p><p>获取资源的入口是 acquire(int arg)方法。arg是要获取的资源个数，独占模式下始终为1。</p><p>首先调用 tryAcquire(arg) 尝试去获取资源，如果失败，就通过 addWaiter(Node.EXCLUSIVE) 方法把这个线程 <strong>插入到等待队列中</strong>，其中传入的参数代表要插入的Node是独占式的。</p><p><strong>在结点进入等待队列后，调用park使它进入阻塞状态的，只要头结点的线程是处于活跃状态的。</strong></p><p>获取资源的方法除了acquire之外还有以下三个：</p><ul><li>acquireInterruptibly：申请可中断的资源（独占模式）</li><li>acquireShared：申请共享模式的资源</li><li>acquireSharedInterruptibly：申请可中断的资源（共享模式）</li></ul><blockquote><p>可中断的意思是，在线程中断时可能会抛出InterruptedException</p></blockquote></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h1 id=&quot;AQS简介&quot;&gt;&lt;a href=&quot;#AQS简介&quot; class=&quot;headerlink&quot; title=&quot;AQS简介&quot;&gt;&lt;/a&gt;AQS简介&lt;/h1&gt;&lt;p&gt;AQS是 AbstractQueuedSynchronizer 的
-      
-    
-    </summary>
-    
-    
-      <category term="java基础" scheme="https://qihuang7.top/categories/java%E5%9F%BA%E7%A1%80/"/>
-    
-      <category term="多线程" scheme="https://qihuang7.top/categories/java%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
-    
-      <category term="java" scheme="https://qihuang7.top/tags/java/"/>
-    
-      <category term="基础" scheme="https://qihuang7.top/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-      <category term="AQS" scheme="https://qihuang7.top/tags/AQS/"/>
     
   </entry>
   
